@@ -27,7 +27,7 @@ export default function Email() {
         onChange={(e) => {
           validation(e);
         }}
-        placeholder="Enter Email Address..."
+        placeholder="Enter Email Address...."
       ></input>
       {!flag && (
         <img
@@ -47,6 +47,7 @@ export default function Email() {
       )}
       <br />
       <button
+        disabled={flag}
         onClick={(e) => {
           mailCheck(e);
         }}
