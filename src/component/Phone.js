@@ -2,8 +2,11 @@ import React, { useState } from "react";
 
 export default function Phone() {
   const [flag, setFlag] = useState(false);
+  const [value,setvalue]=useState()
 
   const validationPhoneNumber = (e) => {
+    setvalue(e.target.value)
+
     const re = /^\d{10}$/;
     if (re.test(e.target.value)) {
       setFlag(true);
@@ -25,7 +28,7 @@ export default function Phone() {
         }}
         placeholder="Phone no"
       ></input>
-      {!flag && (
+      {!flag &&  value && (
         <img
           src="http://clipart-library.com/new_gallery/0-5770_red-cross-transparent-png-red-cross-no-background.png"
           height="20px"

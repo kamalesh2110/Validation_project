@@ -3,9 +3,11 @@ import { useState } from "react";
 
 export default function Email() {
   const [flag, setFlag] = useState(false);
+  const [value,setValue]=useState('')
 
   // validation of input values by regex matching || function regex.test()
   const validation = (e) => {
+    setValue(e.target.value)
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -29,7 +31,7 @@ export default function Email() {
         }}
         placeholder="Enter Email Address...."
       ></input>
-      {!flag && (
+      {!flag && value && (
         <img
           src="http://clipart-library.com/new_gallery/0-5770_red-cross-transparent-png-red-cross-no-background.png"
           height="20x"
